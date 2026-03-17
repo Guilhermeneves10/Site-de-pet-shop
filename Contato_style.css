@@ -1,0 +1,64 @@
+body{
+    background-color: #ffd84d;
+}
+
+h1{
+    color: #333;
+    text-align: center;
+    margin-top: 50px;
+}
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#ffd84d; /* amarelo */
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* LOGO */
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:20px;
+font-weight:bold;
+color:#333;
+}
+
+.logo-area img{
+width:80px;
+height:80px;
+}
+
+/* MENU */
+
+.menu{
+display:flex;
+gap:30px;
+}
+
+.menu a{
+text-decoration:none;
+color:#000000;
+font-weight:600;
+position:relative;
+}
+
+/* efeito hover moderno */
+
+.menu a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background:#ffffff;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+.menu a:hover::after{
+width:100%;
+}
