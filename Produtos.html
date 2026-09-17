@@ -1,60 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Produtos | Bichinho Feliz</title>
-<link rel="stylesheet" href="produtos_style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Produtos e serviços para cães e gatos no pet shop Bichinho Feliz.">
+  <title>Produtos | Bichinho Feliz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="products.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
-
 <body>
-
-<nav class="navbar">
-
-<div class="logo-area">
-<img src="logo.png" alt="Logo Bichinho Feliz">
-<span>Bichinho Feliz 🐾</span>
-</div>
-
-<div class="menu">
-<a href="index.html">Início</a>
-<a href="contato.html">Contato</a>
-</div>
-
-</nav>
-<section class="produtos">
-
-<h1>Nossos Produtos 🐾</h1>
-
-<div class="grid-produtos">
-
-<div class="card">
-<img src="imagem_raçao.png">
-<h2>Ração Premium</h2>
-<p>Ração de alta qualidade para cães e gatos.</p>
-</div>
-
-<div class="card">
-<img src="imagem_banhoetosa.png">
-<h2>Banho e Tosa</h2>
-<p>Serviço profissional para cuidar do seu pet.</p>
-</div>
-
-<div class="card">
-<img src="imagem_brinquedos.png">
-<h2>Brinquedos</h2>
-<p>Diversos brinquedos para diversão do seu pet.</p>
-</div>
-
-<div class="card">
-<img src="Imagem_coleira.png">
-<h2>Coleiras</h2>
-<p>Coleiras resistentes e confortáveis.</p>
-</div>
-
-</div>
-
-</section>
-
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="Index.html" aria-label="Bichinho Feliz — página inicial"><img src="logo.png" width="1024" height="1024" alt=""><span>Bichinho Feliz 🐾</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></button><nav class="site-nav" id="menu-principal" aria-label="Navegação principal"><a href="Index.html">Início</a><a href="Produtos.html" aria-current="page">Produtos</a><a href="Contato.html">Agendamento</a></nav></div></header>
+  <main id="conteudo"><section class="page-intro" aria-labelledby="titulo-produtos"><p class="eyebrow">Catálogo inteligente</p><h1 id="titulo-produtos">Produtos e serviços para cada fase</h1><p>Encontre o que seu pet precisa e envie seu pedido direto pelo WhatsApp.</p></section><section class="content-section" aria-label="Catálogo de produtos"><div class="catalog-toolbar"><div class="filter-group" aria-label="Filtrar produtos por categoria"><button class="filter-button" type="button" data-filter="todos" aria-pressed="true">Todos</button><button class="filter-button" type="button" data-filter="alimentacao" aria-pressed="false">Alimentação</button><button class="filter-button" type="button" data-filter="higiene" aria-pressed="false">Higiene</button><button class="filter-button" type="button" data-filter="brinquedos" aria-pressed="false">Brinquedos</button><button class="filter-button" type="button" data-filter="acessorios" aria-pressed="false">Acessórios</button></div><p class="catalog-count" data-product-count aria-live="polite"></p></div><div class="product-grid" data-product-grid></div></section></main>
+  <footer class="site-footer"><p>© 2026 Bichinho Feliz. Cuidado em cada detalhe.</p></footer>
 </body>
 </html>
