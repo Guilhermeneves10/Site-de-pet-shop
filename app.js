@@ -127,9 +127,23 @@ if (bookingForm) {
   const progress = bookingForm.querySelector('[data-progress]');
   let currentStep = 0;
 
-  const showStep = (index) => {
+  const showStep = (index, direction = 'forward') => {
+    const previousStep = steps[currentStep];
+    const nextStep = steps[index];
+    if (previousStep && previousStep !== nextStep && !reduceMotion) {
+      previousStep.classList.remove('step-enter', 'step-enter-back');
+      previousStep.classList.add(direction === 'back' ? 'step-exit-back' : 'step-exit');
+      window.setTimeout(() => previousStep.classList.remove('step-exit', 'step-exit-back'), 220);
+    }
+
     currentStep = index;
     steps.forEach((step, stepIndex) => { step.hidden = stepIndex !== index; });
+
+    if (nextStep && !reduceMotion) {
+      nextStep.classList.remove('step-exit', 'step-exit-back');
+      nextStep.classList.add(direction === 'back' ? 'step-enter-back' : 'step-enter');
+      window.setTimeout(() => nextStep.classList.remove('step-enter', 'step-enter-back'), 280);
+    }
     progress.textContent = `Etapa ${index + 1} de ${steps.length}`;
     bookingForm.querySelector('[data-back]').hidden = index === 0;
     bookingForm.querySelector('[data-next]').hidden = index === steps.length - 1;
@@ -142,8 +156,8 @@ if (bookingForm) {
   };
 
   const validStep = () => [...steps[currentStep].querySelectorAll('[required]')].every((input) => input.reportValidity());
-  bookingForm.querySelector('[data-next]').addEventListener('click', () => { if (validStep()) showStep(currentStep + 1); });
-  bookingForm.querySelector('[data-back]').addEventListener('click', () => showStep(currentStep - 1));
+  bookingForm.querySelector('[data-next]').addEventListener('click', () => { if (validStep()) showStep(currentStep + 1, 'forward'); });
+  bookingForm.querySelector('[data-back]').addEventListener('click', () => showStep(currentStep - 1, 'back'));
 
   bookingForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -154,3 +168,4 @@ if (bookingForm) {
 
   showStep(0);
 }
+
